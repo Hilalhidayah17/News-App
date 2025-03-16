@@ -42,7 +42,7 @@ export default async function Home() {
 
       {/* SECTION: Editor's Choice */}
       <h2 className="text-2xl md:text-3xl font-semibold mt-10 border-b border-gray-300 pb-2">
-        Editor's Choice
+        {`Editor's choice`}
       </h2>
       <section className="flex flex-col lg:flex-row gap-8 mt-6">
         <div className="w-full lg:w-3/4">

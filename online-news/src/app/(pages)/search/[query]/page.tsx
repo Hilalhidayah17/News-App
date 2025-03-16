@@ -9,6 +9,16 @@ import Link from "next/link";
 type Props = {
   params: Promise<{ query: string }>;
 };
+interface NewsQuery {
+  abstract: string;
+  multimedia?: { url: string }[];
+  published_date?: string;
+  headline: { main: string };
+  url: string;
+  web_url: string;
+  section?: string;
+  byline?: { original: string };
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { query } = await params;
@@ -37,7 +47,7 @@ export default async function query({
 
           {/* SECTION: Top Stories */}
           <div className="w-full lg:w-2/4 flex flex-col gap-5">
-            {results.slice(1, 5).map((result: any, i: number) => (
+            {results.slice(1, 5).map((result: NewsQuery, i: number) => (
               <SideCardQuery result={result} key={i} />
             ))}
           </div>
@@ -46,7 +56,7 @@ export default async function query({
         {/* SECTION: Other Stories */}
         <section className="mt-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {results.slice(6, 12).map((result: any, i: number) => (
+            {results.slice(6, 12).map((result: NewsQuery, i: number) => (
               <Link href={result.web_url} key={i}>
                 <RegularCard result={result} />
               </Link>
