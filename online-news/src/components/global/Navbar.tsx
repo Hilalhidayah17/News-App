@@ -15,7 +15,7 @@ const Navbar = () => {
   const handleActivePath = (href: string): boolean => href === pathname;
 
   const router = useRouter();
-  const handleQuery = (e: any) => {
+  const handleQuery = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     setQuery(e.target.value);
   };
