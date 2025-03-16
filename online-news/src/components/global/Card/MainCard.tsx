@@ -1,5 +1,6 @@
 import { Calendar, UserRound } from "lucide-react";
 import moment from "moment";
+import Image from "next/image";
 import Link from "next/link";
 
 export const MainCard = ({ results }: { results: news }) => {
@@ -11,8 +12,8 @@ export const MainCard = ({ results }: { results: news }) => {
           <div className="absolute top-0 w-full h-1/5 bg-gradient-to-b from-black/80 to-transparent"></div>
 
           {/* Gambar */}
-          <img
-            src={results?.multimedia?.[0]?.url}
+          <Image
+            src={results?.multimedia?.[0]?.url || "/placeholder.jpg"}
             alt="images"
             className="w-full h-[250px] sm:h-[350px] md:h-auto object-cover rounded-lg"
           />

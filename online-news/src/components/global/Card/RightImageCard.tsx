@@ -1,5 +1,6 @@
 import { Calendar } from "lucide-react";
 import moment from "moment";
+import Image from "next/image";
 import Link from "next/link";
 
 export const RightImageCard = ({ results }: { results: news }) => {
@@ -7,8 +8,8 @@ export const RightImageCard = ({ results }: { results: news }) => {
     <Link href={results.url}>
       <div className="flex gap-4 font-roboto text-[14px] border border-gray-300 p-1 rounded-lg">
         <div className="w-[130px] h-[90px] min-w-[130px] min-h-[90px] overflow-hidden rounded-lg">
-          <img
-            src={results?.multimedia?.[0]?.url}
+          <Image
+            src={results?.multimedia?.[0]?.url || "/placeholder.jpg"}
             alt="images"
             className="w-full h-full object-cover"
           />

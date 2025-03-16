@@ -1,4 +1,5 @@
 import moment from "moment";
+import Image from "next/image";
 import Link from "next/link";
 
 const CardItems = ({ items }: { items: news }) => {
@@ -6,7 +7,7 @@ const CardItems = ({ items }: { items: news }) => {
     <Link href={items.url}>
       <article className="border rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden bg-white h-[400px]">
         <div className="relative w-full h-[200px] overflow-hidden">
-          <img
+          <Image
             src={items?.multimedia?.[0]?.url || "/placeholder.jpg"}
             alt="image"
             className="w-full h-full object-cover"

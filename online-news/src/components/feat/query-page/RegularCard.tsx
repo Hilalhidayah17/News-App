@@ -1,5 +1,6 @@
 import { Calendar, UserRound } from "lucide-react";
 import moment from "moment";
+import Image from "next/image";
 
 interface NewsQuery {
   abstract: string;
@@ -17,7 +18,7 @@ export const RegularCard = ({ result }: { result: NewsQuery }) => {
   return (
     <article className="bg-white font-serif space-y-4 border-b border-gray-300 rounded-md shadow-sm h-[370px]">
       <div className="overflow-hidden rounded-lg">
-        <img
+        <Image
           src={`${baseUrl}${result?.multimedia?.[0]?.url}`}
           alt="images"
           className="w-full h-[200px] object-cover rounded-lg"

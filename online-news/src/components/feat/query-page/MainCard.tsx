@@ -1,5 +1,6 @@
 import { Calendar, UserRound } from "lucide-react";
 import moment from "moment";
+import Image from "next/image";
 import Link from "next/link";
 
 interface NewsQuery {
@@ -20,7 +21,7 @@ export const MainCardQuery = ({ results }: { results: NewsQuery }) => {
       <Link href={results.web_url}>
         <div className="absolute top-0 w-full h-1/5 bg-gradient-to-b from-black/80 to-transparent"></div>
 
-        <img
+        <Image
           src={`${baseUrl}${results?.multimedia?.[0]?.url}`}
           alt="images"
           className="w-full h-auto object-cover rounded-lg"

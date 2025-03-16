@@ -1,5 +1,6 @@
 import { Calendar } from "lucide-react";
 import moment from "moment";
+import Image from "next/image";
 import Link from "next/link";
 
 interface NewsQuery {
@@ -18,7 +19,7 @@ export const SideCardQuery = ({ result }: { result: NewsQuery }) => {
     <Link href={result.web_url}>
       <div className="flex gap-6 font-roboto text-[14px] border border-gray-300 p-0.5  rounded-lg">
         <div className="w-[120px] h-[90px] min-w-[120px] min-h-[90px] overflow-hidden rounded-lg aspect-[3/2]">
-          <img
+          <Image
             src={`${baseUrl}${result?.multimedia?.[0]?.url}`}
             alt="images"
             className="w-full h-full object-cover"

@@ -5,6 +5,6 @@ interface news {
   title: string;
   url: string;
   web_url: string;
-  section?: string;
+  section?: string | undefined;
   byline?: string;
 }

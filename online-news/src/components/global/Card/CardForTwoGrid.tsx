@@ -1,5 +1,6 @@
 import { Calendar, UserRound } from "lucide-react";
 import moment from "moment";
+import Image from "next/image";
 import Link from "next/link";
 
 export const CardForTwoGrid = ({ results }: { results: news }) => {
@@ -7,8 +8,8 @@ export const CardForTwoGrid = ({ results }: { results: news }) => {
     <article className="bg-white font-serif space-y-4 border-b border-gray-300 rounded-md">
       <Link href={results.url}>
         <div>
-          <img
-            src={results?.multimedia?.[0]?.url}
+          <Image
+            src={results.multimedia?.[0].url || "/placeholder.jpg"}
             alt="images"
             className="rounded-lg w-full h-[200px] object-cover"
           />
