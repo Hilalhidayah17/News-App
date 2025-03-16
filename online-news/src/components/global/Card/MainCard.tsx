@@ -15,6 +15,8 @@ export const MainCard = ({ results }: { results: news }) => {
           <Image
             src={results?.multimedia?.[0]?.url || "/placeholder.jpg"}
             alt="images"
+            width={500}
+            height={500}
             className="w-full h-[250px] sm:h-[350px] md:h-auto object-cover rounded-lg"
           />
 

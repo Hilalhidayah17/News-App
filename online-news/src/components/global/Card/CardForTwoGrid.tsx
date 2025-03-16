@@ -11,6 +11,8 @@ export const CardForTwoGrid = ({ results }: { results: news }) => {
           <Image
             src={results.multimedia?.[0].url || "/placeholder.jpg"}
             alt="images"
+            width={500}
+            height={500}
             className="rounded-lg w-full h-[200px] object-cover"
           />
         </div>

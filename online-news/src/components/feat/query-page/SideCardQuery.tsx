@@ -22,6 +22,8 @@ export const SideCardQuery = ({ result }: { result: NewsQuery }) => {
           <Image
             src={`${baseUrl}${result?.multimedia?.[0]?.url}`}
             alt="images"
+            width={500}
+            height={500}
             className="w-full h-full object-cover"
           />
         </div>

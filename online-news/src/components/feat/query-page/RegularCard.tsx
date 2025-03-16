@@ -21,6 +21,8 @@ export const RegularCard = ({ result }: { result: NewsQuery }) => {
         <Image
           src={`${baseUrl}${result?.multimedia?.[0]?.url}`}
           alt="images"
+          width={500}
+          height={500}
           className="w-full h-[200px] object-cover rounded-lg"
         />
       </div>

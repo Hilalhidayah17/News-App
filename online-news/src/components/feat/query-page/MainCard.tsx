@@ -25,6 +25,8 @@ export const MainCardQuery = ({ results }: { results: NewsQuery }) => {
           src={`${baseUrl}${results?.multimedia?.[0]?.url}`}
           alt="images"
           className="w-full h-auto object-cover rounded-lg"
+          width={500}
+          height={500}
         />
 
         <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-black/90 to-transparent"></div>

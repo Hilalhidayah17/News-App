@@ -10,6 +10,8 @@ const CardItems = ({ items }: { items: news }) => {
           <Image
             src={items?.multimedia?.[0]?.url || "/placeholder.jpg"}
             alt="image"
+            width={500}
+            height={500}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
