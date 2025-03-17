@@ -6,6 +6,14 @@ import { Separator } from "@/components/ui/separator";
 import { redirect, useRouter } from "next/navigation";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 const Navbar = () => {
   const [query, setQuery] = useState("");
@@ -33,13 +41,13 @@ const Navbar = () => {
             </h1>
           </li>
           <li className=" flex relative md:w-full w-[200px] md:items-center md:justify-center">
-            <div className="absolute right-6 md:top-3 md:left-71 flex justify-center items-center  hover:bg-gray-200 hover:rounded-full h-8 w-8 duration-200">
+            <div className="absolute right-2 md:top-3 md:left-61 flex justify-center items-center  hover:bg-gray-200 hover:rounded-full h-8 w-8 duration-200">
               <Search
                 className=" text-gray-600 cursor-pointer "
                 onClick={handleSearch}
               />
             </div>
-            <div className="border-r h-[40px] absolute left-80 hidden md:block"></div>
+            <div className="border-r h-[40px] absolute left-71 hidden md:block"></div>
             <input
               type="search"
               name="search"
@@ -49,6 +57,7 @@ const Navbar = () => {
               onKeyDown={(e) => e.key === "Enter" && handleSearch()}
             />
           </li>
+          <li className="w-[100px] block"></li>
           <li className="md:hidden">
             <button onClick={() => setMenuOpen(!menuOpen)}>
               {menuOpen ? (
@@ -59,6 +68,8 @@ const Navbar = () => {
             </button>
           </li>
           <li className="hidden md:flex"></li>
+
+          {/* Navigation */}
         </ul>
         <Separator className="my-2" />
         <ul
@@ -108,6 +119,59 @@ const Navbar = () => {
             }`}
           >
             Fashion
+          </li>
+          <li>
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-black">
+                    More
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <NavigationMenuLink
+                      onClick={() => router.push("/category/Business")}
+                      className={`cursor-pointer ${
+                        handleActivePath("/category/Business")
+                          ? "underline underline-offset-2 decoration-pink-500"
+                          : ""
+                      }`}
+                    >
+                      Business
+                    </NavigationMenuLink>
+                    <NavigationMenuLink
+                      onClick={() => router.push("/category/Movies")}
+                      className={`cursor-pointer ${
+                        handleActivePath("/category/Movies")
+                          ? "underline underline-offset-2 decoration-pink-500"
+                          : ""
+                      }`}
+                    >
+                      Movies
+                    </NavigationMenuLink>
+                    <NavigationMenuLink
+                      onClick={() => router.push("/category/Health")}
+                      className={`cursor-pointer ${
+                        handleActivePath("/category/Health")
+                          ? "underline underline-offset-2 decoration-pink-500"
+                          : ""
+                      }`}
+                    >
+                      Health
+                    </NavigationMenuLink>
+                    <NavigationMenuLink
+                      onClick={() => router.push("/category/Arts")}
+                      className={`cursor-pointer ${
+                        handleActivePath("/category/Arts")
+                          ? "underline underline-offset-2 decoration-pink-500"
+                          : ""
+                      }`}
+                    >
+                      Arts
+                    </NavigationMenuLink>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
           </li>
         </ul>
         <Separator className="my-2" />
